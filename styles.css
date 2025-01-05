@@ -44,7 +44,7 @@ main {
 /* Blog Post Styles */
 .post {
     background-color: white;
-    border: 2px solid black;
+    border: 6px solid black;
     margin-bottom: 20px;
     padding: 15px;
 }
