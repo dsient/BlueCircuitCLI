@@ -1,114 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DSiWARE</title>
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forum with Swiping</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    .post-container {
+      position: relative;
+      width: 90%;
+      max-width: 600px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      background: white;
+    }
+
+    .post {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      transition: transform 0.5s ease;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .post h2 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .post p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .arrow {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      cursor: pointer;
+      font-size: 24px;
+      color: #555;
+      user-select: none;
+    }
+
+    .arrow:hover {
+      color: #000;
+    }
+  </style>
 </head>
 <body>
-    <header class="text-center p-4 border-bottom">
-        <h1>DSiWARE</h1>
-        <p>@walker.caskey@my.utsa.edu</p>
-        <p>Free cybersec tools / examples / tutorials~</p>
-    </header>
-    
-    <main class="container mt-4">
-        <div class="row">
-            <!-- Post 1 -->
-            <div class="col-md-4 mb-4">
-                <article class="post p-3 border">
-                    <h2>PortMagnet</h2>
-                    <p class="date text-muted">January 4, 2025</p>
-                    <p>A very simple port scanner tool!</p>
-                </article>
-            </div>
+  <div class="post-container">
+    <div class="post" id="post1">
+      <h2>Post 1</h2>
+      <p>Welcome to the forum! This is the first post. Swipe or click the arrow to see more.</p>
+    </div>
+    <div class="post hidden" id="post2">
+      <h2>Post 2</h2>
+      <p>This is the second post. Keep swiping to explore!</p>
+    </div>
+    <div class="post hidden" id="post3">
+      <h2>Post 3</h2>
+      <p>Final post! Thanks for checking out this example.</p>
+    </div>
+    <div class="arrow" id="arrow">↓</div>
+  </div>
 
-            <!-- Post 2 -->
-            <div class="col-md-4 mb-4">
-                <article class="post p-3 border">
-                    <h2>Post Title 2</h2>
-                    <p class="date text-muted">January 3, 2025</p>
-                    <p>Another post follows the same minimalistic design principles, staying true to the 1-bit theme.</p>
-                </article>
-            </div>
+  <script>
+    const posts = document.querySelectorAll('.post');
+    const arrow = document.getElementById('arrow');
+    let currentPostIndex = 0;
 
-            <!-- Post 3 -->
-            <div class="col-md-4 mb-4">
-                <article class="post p-3 border">
-                    <h2>Post Title 3</h2>
-                    <p class="date text-muted">January 2, 2025</p>
-                    <p>Third post with a similar structure to the previous ones. Enjoy the monochrome style!</p>
-                </article>
-            </div>
-            
-            <!-- Post 4 -->
-            <div class="col-md-4 mb-4">
-                <article class="post p-3 border">
-                    <h2>Post Title 4</h2>
-                    <p class="date text-muted">January 1, 2025</p>
-                    <p>Another blog post with a clean, pixelated design!</p>
-                </article>
-            </div>
+    function showPost(index) {
+      posts.forEach((post, i) => {
+        post.classList.toggle('hidden', i !== index);
+      });
+    }
 
-            <!-- Post 5 -->
-            <div class="col-md-4 mb-4">
-                <article class="post p-3 border">
-                    <h2>Post Title 5</h2>
-                    <p class="date text-muted">December 31, 2024</p>
-                    <p>This post continues the 1-bit style theme, using minimal colors and structure.</p>
-                </article>
-            </div>
+    function nextPost() {
+      currentPostIndex = (currentPostIndex + 1) % posts.length;
+      showPost(currentPostIndex);
+    }
 
-            <!-- Post 6 -->
-            <div class="col-md-4 mb-4">
-                <article class="post p-3 border">
-                    <h2>Post Title 6</h2>
-                    <p class="date text-muted">December 30, 2024</p>
-                    <p>Sixth post in our blog! Maintaining the same black-and-white design approach!</p>
-                </article>
-            </div>
+    arrow.addEventListener('click', nextPost);
 
-            <!-- Post 7 -->
-            <div class="col-md-4 mb-4">
-                <article class="post p-3 border">
-                    <h2>Post Title 7</h2>
-                    <p class="date text-muted">December 29, 2024</p>
-                    <p>Seventh post showcasing the consistency of the minimalist style!</p>
-                </article>
-            </div>
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowDown') {
+        nextPost();
+      }
+    });
 
-            <!-- Post 8 -->
-            <div class="col-md-4 mb-4">
-                <article class="post p-3 border">
-                    <h2>Post Title 8</h2>
-                    <p class="date text-muted">December 28, 2024</p>
-                    <p>Here's the eighth post, still sticking with the 1-bit aesthetic!</p>
-                </article>
-            </div>
+    let touchStartY = 0;
+    let touchEndY = 0;
 
-            <!-- Post 9 -->
-            <div class="col-md-4 mb-4">
-                <article class="post p-3 border">
-                    <h2>Post Title 9</h2>
-                    <p class="date text-muted">December 27, 2024</p>
-                    <p>This is the ninth post, completing the grid layout!</p>
-                </article>
-            </div>
-        </div>
-    </main>
-    
-    <footer class="text-center p-3 border-top mt-4">
-        <p>&copy; 2025 DSiWARE</p>
-    </footer>
+    document.addEventListener('touchstart', (e) => {
+      touchStartY = e.changedTouches[0].clientY;
+    });
 
-    <!-- Bootstrap JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    document.addEventListener('touchend', (e) => {
+      touchEndY = e.changedTouches[0].clientY;
+      if (touchStartY - touchEndY > 50) {
+        nextPost();
+      }
+    });
+
+    // Initial post setup
+    showPost(currentPostIndex);
+  </script>
 </body>
 </html>
-
