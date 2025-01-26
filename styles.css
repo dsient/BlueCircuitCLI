@@ -84,6 +84,34 @@ section {
     color: #87bfff;
 }
 
+/* New Posts Section */
+#posts {
+    margin-top: 50px;
+}
+
+.post {
+    background-color: #003566;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 3px solid #3f8efc;
+    text-align: left;
+}
+
+.post h3 {
+    color: #ffd60a;
+    font-size: 1.5em;
+}
+
+.post .post-date {
+    font-size: 0.9em;
+    color: #87bfff;
+}
+
+.post p {
+    color: #b0c4de;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -103,4 +131,3 @@ footer {
         background-position: 0% 50%;
     }
 }
-
