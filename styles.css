@@ -1,9 +1,16 @@
 /* Global Styles */
 body, h1, h2, p, a {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'ark-pixel-10px-monospaced-ja', monospace;
     margin: 0;
     padding: 0;
     color: white;
+}
+
+@font-face {
+    font-family: 'ark-pixel-10px-monospaced-ja';
+    src: url('ark-pixel-10px-monospaced-ja.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
