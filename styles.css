@@ -1,1 +1,106 @@
+/* Global Styles */
+body, h1, h2, p, a {
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body {
+    background: linear-gradient(45deg, #003566, #000814);
+    background-size: 400% 400%;
+    animation: gradientShift 30s ease infinite;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #ffc300;
+}
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: #ffd60a;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+nav a:hover {
+    color: #ffd166;
+}
+
+/* Section Styles */
+section {
+    margin: 50px auto;
+    max-width: 80%;
+    text-align: center;
+}
+
+#about-us {
+    padding: 30px 0;
+}
+
+#projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.project-container {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.project {
+    width: 30%;
+    text-align: center;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border: 3px solid #3f8efc;
+    border-radius: 10px;
+}
+
+.project p {
+    margin-top: 15px;
+    color: #87bfff;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #003566;
+}
+
+/* Animations */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
 
