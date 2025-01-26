@@ -1,137 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forum with Swiping</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f4f4;
-    }
-
-    .post-container {
-      position: relative;
-      width: 90%;
-      max-width: 600px;
-      height: 400px;
-      overflow: hidden;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      background: white;
-    }
-
-    .post {
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      transition: transform 0.5s ease;
-      padding: 20px;
-      box-sizing: border-box;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    .post h2 {
-      margin: 0 0 10px;
-      font-size: 24px;
-      color: #333;
-    }
-
-    .post p {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.5;
-      text-align: center;
-    }
-
-    .arrow {
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      cursor: pointer;
-      font-size: 24px;
-      color: #555;
-      user-select: none;
-    }
-
-    .arrow:hover {
-      color: #000;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueCircuit Game Studio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="post-container">
-    <div class="post" id="post1">
-      <h2>Post 1</h2>
-      <p>Welcome to the forum! This is the first post. Swipe or click the arrow to see more.</p>
-    </div>
-    <div class="post hidden" id="post2">
-      <h2>Post 2</h2>
-      <p>This is the second post. Keep swiping to explore!</p>
-    </div>
-    <div class="post hidden" id="post3">
-      <h2>Post 3</h2>
-      <p>Final post! Thanks for checking out this example.</p>
-    </div>
-    <div class="arrow" id="arrow">↓</div>
-  </div>
+    <header>
+        <h1>Welcome to BlueCircuit Game Studio</h1>
+        <nav>
+            <a href="#about-us">About Us</a>
+            <a href="#projects">Projects</a>
+        </nav>
+    </header>
 
-  <script>
-    const posts = document.querySelectorAll('.post');
-    const arrow = document.getElementById('arrow');
-    let currentPostIndex = 0;
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>We are BlueCircuit, a game studio dedicated to creating innovative and captivating gaming experiences. Our team is passionate about combining creative design with cutting-edge technology to craft unforgettable gameplay.</p>
+    </section>
 
-    function showPost(index) {
-      posts.forEach((post, i) => {
-        post.classList.toggle('hidden', i !== index);
-      });
-    }
+    <section id="projects">
+        <h2>Our Projects</h2>
+        <div class="project-container">
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1">
+                <p>Project One: A thrilling adventure into unknown worlds.</p>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2">
+                <p>Project Two: A strategy game that tests your wit.</p>
+            </div>
+            <div class="project">
+                <img src="project3.jpg" alt="Project 3">
+                <p>Project Three: A fun-filled, action-packed racing game.</p>
+            </div>
+        </div>
+    </section>
 
-    function nextPost() {
-      currentPostIndex = (currentPostIndex + 1) % posts.length;
-      showPost(currentPostIndex);
-    }
+    <footer>
+        <p>BlueCircuit © 2025</p>
+    </footer>
 
-    arrow.addEventListener('click', nextPost);
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'ArrowDown') {
-        nextPost();
-      }
-    });
-
-    let touchStartY = 0;
-    let touchEndY = 0;
-
-    document.addEventListener('touchstart', (e) => {
-      touchStartY = e.changedTouches[0].clientY;
-    });
-
-    document.addEventListener('touchend', (e) => {
-      touchEndY = e.changedTouches[0].clientY;
-      if (touchStartY - touchEndY > 50) {
-        nextPost();
-      }
-    });
-
-    // Initial post setup
-    showPost(currentPostIndex);
-  </script>
+    <script src="script.js"></script>
 </body>
 </html>
