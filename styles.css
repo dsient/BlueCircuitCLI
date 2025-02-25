@@ -5,6 +5,7 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   color: #ff69b4;
+  font-family: 'ark-pixel-10px-monospaced-ja', monospace;
 }
 .news-section {
   background-color: #111;
