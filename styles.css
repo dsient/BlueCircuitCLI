@@ -1,13 +1,17 @@
 body {
   background-color: #000;
   font-family: 'ark-pixel-10px-monospaced-ja', monospace;
-  font: 'ark-pixel-10px-monospaced-ja';
   color: #a020f0;
 }
+
+@font-face {
+  font-family: 'ark-pixel-10px-monospaced-ja';
+  src: url('path/to/ark-pixel-10px-monospaced-ja.ttf') format('ttf');
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: #ff69b4;
   font-family: 'ark-pixel-10px-monospaced-ja', monospace;
-  font: 'ark-pixel-10px-monospaced-ja';
 }
 .news-section {
   background-color: #111;
