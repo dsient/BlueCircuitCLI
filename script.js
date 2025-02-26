@@ -23,11 +23,11 @@ const blogPosts = [
 
 function renderPosts() {
   const container = document.getElementById('blog-container')
-  container.innterHTML = '';
+  container.innerHTML = '';
   blogPosts.sort((a,b) => new Date(b.date) - new Date(a.date)); // sort by date
   blogPosts.forEach(post => {
     const card = document.createElement('div');
-    card.classname = 'blog-card';
+    card.className = 'blog-card';
 
     //creates hyperlink if the property is filled
     let linkHTML = '';
