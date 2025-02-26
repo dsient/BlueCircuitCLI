@@ -1,6 +1,5 @@
 const blogPosts = [
-  { title: "Exploring the Depths", content: "Today we venture deeper into the dungeon...", date: "2025-02-25" },
-  { title: "New Discoveries", content: "Found something interesting lurking around.", date: "2025-02-24" },
+  { title: "Windows 11 Debloat Guide", content: "Created a guide for winutil by GTT to debloat w11 and tweak configurations and privacy settings. Check it out here: https://github.com/dsient/W11-Debloat-Guide", date: "2025-02-24" },
   { title: "Welcome Post", content: "Step into the DSi's Dungeon and explore!", date: "2025-02-23" }
 ];
 
