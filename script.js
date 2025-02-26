@@ -1,3 +1,8 @@
+
+
+
+
+
 const blogPosts = [
   { 
     title: "Windows 11 Debloat Guide", 
@@ -11,6 +16,10 @@ const blogPosts = [
     date: "2/25/2025" 
   }
 ];
+
+
+
+
 
 function renderPosts() {
   const container = document.getElementById('blog-container')
@@ -26,12 +35,12 @@ function renderPosts() {
       linkHTML = `<p><a href="${post.link}" target="_blank" rel="noopener noreferrer"Access Link</a></p>`;
     }
     
-    card.innerHTML = '
+    card.innerHTML = `
       <h2>${post.title}</h2>
       <p><em>${post.date}</em></p>
       <p>${post.content}</p>
       ${linkHTML}
-    ';
+    `;
     container.appendChild(card);
   }); 
 
