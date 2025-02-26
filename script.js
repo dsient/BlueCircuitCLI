@@ -32,7 +32,7 @@ function renderPosts() {
     //creates hyperlink if the property is filled
     let linkHTML = '';
     if (post.link) {
-      linkHTML = `<p><a href="${post.link}" target="_blank" rel="noopener noreferrer"Access Link</a></p>`;
+      linkHTML = `<p><a href="${post.link}" target="_blank" rel="noopener noreferrer">Access Link</a></p>`;
     }
     
     card.innerHTML = `
