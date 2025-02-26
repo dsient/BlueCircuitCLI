@@ -6,7 +6,7 @@ body {
 
 @font-face {
   font-family: 'ark-pixel-10px-monospaced-ja';
-  src: url('path/to/ark-pixel-10px-monospaced-ja.ttf') format('ttf');
+  src: url('/ark-pixel-10px-monospaced-ja.ttf') format('ttf');
 }
 
 h1, h2, h3, h4, h5, h6 {
