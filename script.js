@@ -15,13 +15,12 @@ const blogPosts = [
 function renderPosts() {
   const container = document.getElementById('blog-container')
   container.innterHTML = '';
-  blogPosts.sort((a,b) => new Date(b.date) - new Date(a.date));
-
+  blogPosts.sort((a,b) => new Date(b.date) - new Date(a.date)); // sort by date
   blogPosts.forEach(post => {
     const card = document.createElement('div');
-    card.classname = 'blog-card'
+    card.classname = 'blog-card';
 
-    //Create hyperlink if the property is filled
+    //creates hyperlink if the property is filled
     let linkHTML = '';
     if (post.link) {
       linkHTML = `<p><a href="${post.link}" target="_blank" rel="noopener noreferrer"Access Link</a></p>`;
@@ -33,8 +32,11 @@ function renderPosts() {
       <p>${post.content}</p>
       ${linkHTML}
     ';
+    container.appendChild(card);
+  }); 
 
-  }
+
+
 }
 
 renderPosts();
