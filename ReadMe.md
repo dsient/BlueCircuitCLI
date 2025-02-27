@@ -3,18 +3,19 @@
 
 
 
-# Project Overview
-!!!THIS IS NOT ANYWHERE NEAR COMPLETION!!! this specific repo is being redone entirely, current version is !!NOT!! here.
+# PROJECT OVERVIEW
+__**!!!THIS IS NOT ANYWHERE NEAR COMPLETION!!!**__
+this specific repo is being redone entirely, current version is __**!!NOT!!**__ here.
 
 **Concept:**  
 BlueCirc will be A web-based “CLI OS” that mimics a command-line interface operating system. The project serves as my cybersecurity portfolio and blog, specifically made to be highly secure. 
 
 Featuring:
 - A terminal-like interface with cinematic startup animations.
-- A custom command syntax (similar to Bash) that powers navigation and interactive commands.
+- A custom command syntax (somewhat similar to Bash) that powers navigation and interactive commands.
 - A secure login and user management system with both frontend and backend components.
 - Modularized components where the initial startup script (`mainLoop.js`) plays the OS startup, then transitions to a fully interactive CLI after secure authentication.
-- File strucutre segregates the project into secular modules and high levels of security.
+- File structure segregates the project into secular modules and high levels of security.
 - Each component is seperated, and easily maintainable.
 - Structure is inspired by patterns similar to hexagonal or onion architecture to ensure security.
 
@@ -41,7 +42,15 @@ Featuring:
 **Usage:**  
 Users access the project through a web browser. On load, they see an OS startup animation (Typed.js) and are prompted with a login/create-user screen. Once authenticated, the rest of the CLI OS loads with secure, modular components that handle user commands, display cinematic effects, and allow access to portfolio/blog content, including direct download of my github projects, securely.
 
+# BASIC FUNCTIONS
 
+  1 **Interactive Portfolio & Blog:**
+    - Integrating a blog section that shows cybersec related posts.
+    - Using the CLI OS commands will allow you to navigate between blog posts, and software (direct download from my github); as well as more mostly undetermined functions and "applications".
+    
+  2 **Custom Command Syntax & Cinematic Effects:**
+    - Animating transitions between different system states with Typed.js and CSS animations.
+    - Allowing for per-user animation / font preferences from a set list stored on the server
 
 
 # File Structure
@@ -118,51 +127,44 @@ Somewhat unusual but efficient file structure to keep the project modular and ma
 
 # Security Measures
 
-1. **Frontend Security:**
-   - **Input Sanitization:** All user input in the CLI is sanitized before processing.
-   - **Dependency Management:** Use trusted CDNs (or local copies) of libraries like Bootstrap and Typed.js.
-   - **Script Ordering:** Load dependencies before main scripts to prevent runtime errors.
-
-2. **Backend Security:**
-   - **Password Hashing:** Use bcrypt/argon2 with a strong salt to hash passwords.
-   - **JWT Authentication:** Issue JWTs on login and protect API routes with middleware.
-   - **Secure Headers:** Use Helmet to set secure HTTP headers.
-   - **Rate Limiting:** Implement rate limiting on login and sensitive endpoints.
-   - **Environment Variables:** Store secrets and configuration outside of your source code using dotenv.
-   - **Input Validation:** Use robust input validation to prevent injection attacks.
-   - **HTTPS Enforcement:** Ensure all communications are encrypted.
-
-3. **Additional Security Enhancements:**
-   - **Audit Logging:** Log authentication attempts and sensitive actions.
-   - **Two-Factor Authentication (2FA):** Consider adding 2FA for admin-level access.
-   - **Regular Dependency Updates:** Keep all packages updated to address vulnerabilities.
-   - **Content Security Policy (CSP):** Set up CSP headers to restrict resource loading.
-   - **Error Handling:** Avoid exposing stack traces or internal error details to the client.
-
-# EXTRAS
-
-- **Interactive Portfolio & Blog:**
-  - Integrate a blog section that shows your cybersecurity posts.
-  - Use the CLI OS commands to navigate between blog posts, project demos, and your portfolio.
+  1. **Frontend Security:**
+     - **Input Sanitization:** All user input in the CLI is sanitized before processing.
+     - **Dependency Management:** Using trusted CDNs like Bootstrap and Typed.js.
+     - **Script Ordering:** Load dependencies before main scripts to prevent runtime errors.
+     - **Needed access:** Minimized amount of front end accessible files as much as possible.
   
-- **Custom Command Syntax & Cinematic Effects:**
-  - Animate transitions between different system states with Typed.js and CSS animations.
-  - Allow for per-user animation / font preferences from a small list using cookies (as these settings are not entirely important to working order)
+  2. **Backend Security:**
+     - **Password Hashing:** Using bcrypt/argon2 with a strong salt to hash passwords.
+     - **JWT Authentication:** Issuing JWTs on login and protect API routes with middleware.
+     - **Secure Headers:** Using Helmet to set secure HTTP headers.
+     - **Rate Limiting:** Implementing rate limiting on login and sensitive endpoints.
+     - **Environment Variables:** Storing secrets and configuration outside of source code using dotenv.
+     - **Input Validation:** Using __robust__ input validation to prevent injection attacks.
+     - **HTTPS Enforcement:** Ensuring all communications are encrypted.
+  
+  3. **Additional Security Enhancements:**
+     - **Audit Logging:** Log authentication attempts and sensitive actions.
+     - **Two-Factor Authentication (2FA):** Might be adding 2FA for admin-level access.
+     - **Regular Dependency Updates:** Keeping all packages updated to address vulnerabilities.
+     - **Content Security Policy (CSP):** Setting up CSP headers to restrict resource loading.
+     - **Error Handling:** Avoid exposing stack traces or internal error details to the client.
 
-- **Live Demo Mode:**
+
+
+
+# ROADMAP (As of 2/27/2025)
+
+1 **User Personalization:**
+  - Allow users to create custom profiles or “shell environments” that personalize their experience.
+
+2 **Live Demo Mode:**
   - Will eventually implement an option to simulate a live cyber-attack / CTF guide using my own gained knowledge.
   
-- **User Personalization:**
-  - Allow users to create custom profiles or “shell environments” that personalize their experience.
-  
-- **Dark Mode & Theming:**
+3 **Dark Mode & Theming:**
   - Although the default is a dark theme (pure black background and white text), offer toggles for alternative themes that reflect different “modes” of operation.
   
-- **Engaging Documentation:**
+4 **Engaging Documentation:**
   - Include a comprehensive README and in-OS help command (e.g., `help` or `man`) that describes your project, commands, and security measures.
-  
-- **Source Code & Security Audits:**
-  - If appropriate for your portfolio, provide a secure, read-only view of your source code along with commentary on your security implementations.
   
 - **Performance & Accessibility:**
   - Optimize performance with efficient JavaScript and lazy loading of components.
@@ -170,8 +172,10 @@ Somewhat unusual but efficient file structure to keep the project modular and ma
  
 - **Color Scheme:**
   - 4 bit color theme (16 colors, 2^4)
-  - Guide for terminal coloring: [ https://hamvocke.com/blog/lets-create-a-terminal-color-scheme/ ]
+  - My guide for terminal coloring: [ https://hamvocke.com/blog/lets-create-a-terminal-color-scheme/ ]
 
+- **Source Code & Security Audits:**
+  - Provide a read-only view of the source code, with commentary on security implementations and development.
 
 
 
