@@ -1,46 +1,48 @@
-BlueCircuit is a portfolio / blog project by Walker Caskey [> dsient <]
-Mimics a terminal OS with a custom typescript of bash.
 
-Has a unique file structure, has different user permissions, and read/write/exec.
-Public / Private blog, + Software downloads for my own software, that also give the GITHUB link.
 
 
 
 
 # Project Overview
+!!!THIS IS NOT ANYWHERE NEAR COMPLETION!!! this specific repo is being redone entirely, current version is !!NOT!! here.
 
 **Concept:**  
-BlueCirc is A web-based “CLI OS” that mimics a command-line interface operating system. The project serves as a cybersecurity portfolio and blog, featuring:
+BlueCirc will be A web-based “CLI OS” that mimics a command-line interface operating system. The project serves as my cybersecurity portfolio and blog, specifically made to be highly secure. 
+
+Featuring:
 - A terminal-like interface with cinematic startup animations.
-- A custom command syntax (similar to Bash) that powers navigation and interactive “cyber” commands.
+- A custom command syntax (similar to Bash) that powers navigation and interactive commands.
 - A secure login and user management system with both frontend and backend components.
 - Modularized components where the initial startup script (`mainLoop.js`) plays the OS startup, then transitions to a fully interactive CLI after secure authentication.
-File strucutre segregates the project into secular modules and high levels of security.
-Each component is seperated, and easily maintainable.
-This is inspired by the architectural patterns similar to, say, hexagonal or onion architecture.
+- File strucutre segregates the project into secular modules and high levels of security.
+- Each component is seperated, and easily maintainable.
+- Structure is inspired by patterns similar to hexagonal or onion architecture to ensure security.
 
 **Technology Stack:**
 - **Frontend:**  
-  - **HTML/CSS/JavaScript:** For structure, styling, and interactivity.
-  - **Bootstrap 5.3:** For responsive layout; terminal window (2/3 of the screen) and a syntax/tutorial window (1/3 of the screen).
-  - **Typed.js:** For cinematic typing animations.
-  - **Custom CLI Parser:** To process unique command syntax.
+  - **HTML/CSS/JavaScript:** Structure, styling, and interactivity.
+  - **Bootstrap 5.3:** For a responsive layout; terminal window (2/3 of the screen) and a syntax/tutorial window (1/3 of the screen).
+  - **Typed.js:** For cinematic typing animations and cool effects.
+  - **Custom CLI Parser:** To process unique command syntax. (Syntax sheet coming soon)
   
 - **Backend:**  
   - **Node.js with Express:** To handle API endpoints for authentication and command processing.
   - **Database (MongoDB/PostgreSQL):** For securely storing user credentials and other data.
   - **Authentication & Security:**  
-    - Password hashing using **bcrypt** (or **argon2**).
+    - Password hashing using **bcrypt** (or **argon2,** not sure quite yet).
     - JWT (JSON Web Tokens) for session management.
     - Middleware such as **helmet**, **cors**, and rate limiting.
-    - Environment variables using **dotenv** for secret management.
+    - Environment variables with **dotenv** for secret management.
   
 - **Additional Tools:**  
-  - **HTTPS:** All communications should be over HTTPS.
-  - **Logging and Monitoring:** Optional logging for authentication and command attempts (using tools like Winston or Morgan).
+  - **HTTPS:** All communications will be over HTTPS.
+  - **Logging and Monitoring:** logging for authentication and command attempts (using tools like Winston or Morgan, undecided).
 
 **Usage:**  
-Users access the project through a web browser. On load, they see an OS startup animation (powered by Typed.js) and are prompted with a login/create-user screen. Once authenticated, the rest of the CLI OS loads with secure, modular components that handle user commands, display cinematic effects, and allow access to portfolio/blog content.
+Users access the project through a web browser. On load, they see an OS startup animation (Typed.js) and are prompted with a login/create-user screen. Once authenticated, the rest of the CLI OS loads with secure, modular components that handle user commands, display cinematic effects, and allow access to portfolio/blog content, including direct download of my github projects, securely.
+
+
+
 
 # File Structure
 
@@ -109,18 +111,18 @@ Somewhat unusual but efficient file structure to keep the project modular and ma
    - **Content Security Policy (CSP):** Set up CSP headers to restrict resource loading.
    - **Error Handling:** Avoid exposing stack traces or internal error details to the client.
 
-# Suggestions for a Cool and Impressive Project
+# EXTRAS
 
 - **Interactive Portfolio & Blog:**
   - Integrate a blog section that shows your cybersecurity posts.
   - Use the CLI OS commands to navigate between blog posts, project demos, and your portfolio.
   
 - **Custom Command Syntax & Cinematic Effects:**
-  - Develop unique, “hacker-style” commands that trigger visual effects (e.g., `scan`, `breach`, `decrypt`).
   - Animate transitions between different system states with Typed.js and CSS animations.
-  
+  - Allow for per-user animation / font preferences from a small list using cookies (as these settings are not entirely important to working order)
+
 - **Live Demo Mode:**
-  - Include an option to simulate a live cyber-attack or a system scan for dramatic effect (all within a safe, controlled simulation).
+  - Will eventually implement an option to simulate a live cyber-attack / CTF guide using my own gained knowledge.
   
 - **User Personalization:**
   - Allow users to create custom profiles or “shell environments” that personalize their experience.
@@ -137,8 +139,11 @@ Somewhat unusual but efficient file structure to keep the project modular and ma
 - **Performance & Accessibility:**
   - Optimize performance with efficient JavaScript and lazy loading of components.
   - Ensure that your CLI OS is accessible (keyboard navigability, ARIA roles, etc.).
+ 
+- **Color Scheme:**
+  - 4 bit color theme (16 colors, 2^4)
+  - Guide for terminal coloring: [ https://hamvocke.com/blog/lets-create-a-terminal-color-scheme/ ]
 
----
 
 
 
