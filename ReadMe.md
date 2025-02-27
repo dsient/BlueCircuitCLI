@@ -1,5 +1,5 @@
 BlueCircuit is a portfolio / blog project by Walker Caskey [> dsient <]
-Mimics a terminal with a custom typescript of bash.
+Mimics a terminal OS with a custom typescript of bash.
 
 Has a unique file structure, has different user permissions, and read/write/exec.
 Public / Private blog, + Software downloads for my own software, that also give the GITHUB link.
@@ -49,7 +49,7 @@ MD layout:
 ```plaintext /bluecircuit-os ├── /client │ ├── /assets │ │ ├── /css │ │ │ └── styles.css # Global styles: dark background, white text; index panel silver │ │ ├── /js │ │ │ ├── mainLoop.js # Startup script: OS animations, login, load CLI OS │ │ │ ├── cliHandler.js # Handles command input, parsing, and terminal updates │ │ │ └── typedSetup.js # Initialization for Typed.js animations │ │ └── /images │ │ └── logo.png # Custom branding assets │ ├── index.html # Main HTML file with Bootstrap integration │ └── favicon.ico # Favicon for the site │ ├── /server │ ├── /config │ │ └── db.js # Database connection and config │ ├── /controllers │ │ ├── authController.js # Registration and login logic │ │ └── commandController.js # Secure handling of sensitive commands │ ├── /middleware │ │ ├── authenticateToken.js # JWT verification middleware │ │ ├── rateLimiter.js # Rate limiting to prevent brute-force attacks │ │ └── inputValidator.js # Input sanitization/validation (using libraries like Joi) │ ├── /models │ │ └── User.js # User schema/model for your chosen DB │ ├── /routes │ │ ├── authRoutes.js # Routes for user registration and login │ │ └── commandRoutes.js # Routes for processing commands │ ├── .env # Environment variables (do not commit to version control) │ ├── package.json # Node.js dependencies and scripts │ └── server.js # Main Express server file; loads middleware and routes │ └── README.md # Project documentation and setup instructions ```
 
 
-Plaintext layout:
+```
 /bluecircuit-os
 ├── /client
 │   ├── /assets
@@ -84,7 +84,7 @@ Plaintext layout:
 │   └── server.js                    # Main Express server file; loads middleware and routes
 │
 └── README.md                        # Project documentation and setup instructions
-
+```
 
 
 
