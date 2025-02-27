@@ -14,7 +14,7 @@ Featuring:
 - A terminal-like interface with cinematic startup animations.
 - A custom command syntax (somewhat similar to Bash) that powers navigation and interactive commands.
 - A secure login and user management system with both frontend and backend components.
-- Modularized components where the initial startup script (`mainLoop.js`) plays the OS startup, then transitions to a fully interactive CLI after secure authentication.
+- Modularized components where the initial startup script (`clientSTR.js`) plays the OS startup, then transitions to a fully interactive CLI after secure authentication.
 - File structure segregates the project into secular modules and high levels of security.
 - Each component is seperated, and easily maintainable.
 - Structure is inspired by patterns similar to hexagonal or onion architecture to ensure security.
@@ -164,11 +164,11 @@ Somewhat unusual but efficient file structure to keep the project modular and ma
   - Although the default is a dark theme (pure black background and white text), offer toggles for alternative themes that reflect different “modes” of operation.
   
 4 **Engaging Documentation:**
-  - Include a comprehensive README and in-OS help command (e.g., `help` or `man`) that describes your project, commands, and security measures.
+  - Include a comprehensive README and in-OS help command (e.g., `help` or `man`) that describes the project.
   
 - **Performance & Accessibility:**
   - Optimize performance with efficient JavaScript and lazy loading of components.
-  - Ensure that your CLI OS is accessible (keyboard navigability, ARIA roles, etc.).
+  - Ensure that the CLI interface is accessible and working at all times (keyboard navigability, ARIA roles, etc.).
  
 - **Color Scheme:**
   - 4 bit color theme (16 colors, 2^4)
