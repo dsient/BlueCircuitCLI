@@ -51,38 +51,66 @@ Somewhat unusual but efficient file structure to keep the project modular and ma
 ```
 /bluecircuit-os
 ├── /client
-│   ├── /assets
-│   │   ├── /css
-│   │   │   └── styles.css           # Global styles: dark background, white text; index panel silver
-│   │   ├── /js
-│   │   │   ├── mainLoop.js          # Startup script: OS animations, login, load CLI OS
-│   │   │   ├── cliHandler.js        # Handles command input, parsing, and terminal updates
-│   │   │   └── typedSetup.js        # Initialization for Typed.js animations
-│   │   └── /images
-│   │       └── logo.png             # Custom branding assets
-│   ├── index.html                   # Main HTML file with Bootstrap integration
-│   └── favicon.ico                  # Favicon for the site
+|   |
+│   ├── /bulk                # holds the "bulk", or most of / entirety of the client side.
+│   │
+│   │   ├── /glSty               # Global styles
+│   │   │   ├── userProfile.css       # Hold user preferences (font, anims, etc.)
+│   │   │   └── deepSty.css           # 'deep' refers to admin only / system config files not to be accessed by normal users
+│   │   |
+│   │   ├── /boot                # mimics boot startup
+│   │   │   └── clientSTR.js          # Startup script: OS animations, login, load CLI OS
+│   │   |
+│   │   └── /ast                 # main client asset bin     
+│   │   |   └── logo.png              # Custom assets
+│   │   |
+|   |   └── /inp                 # Input handlers 
+|   |       ├── inpHandler.js         # Handles command input, parsing, and terminal updates
+|   |       └── typdInit.js           # Initialization for Typed.js animations
+|   |   
+│   │ 
+│   ├── /blg  
+│   │   ├── /priv                # Pages for priv blog access
+│   │   |   └── blgReqACC.js          # Client request with password (3 month auto-reset), then wait for page info. (Active connection to display page without access to the internal files)
+│   │   └── /publ                # Assets and pages for public blog posts
+│   │       └── blgCONN.js            # Active connection to display page without access to the internal files
+│   │
+│   └── /sftwre              # Requests server for active software list; Displays it
 │
+|
+|
 ├── /server
-│   ├── /config
-│   │   └── db.js                    # Database connection and config
+|   |
+│   ├── /constella          # "Constellation" of databases, interGuard utilities as a shield
+|   |   ├── blgDb.js                  # blog database
+│   │   └── db.js                     # Database of user accounts !!SECURE!!
+|   |
 │   ├── /controllers
-│   │   ├── authController.js        # Registration and login logic
-│   │   └── commandController.js     # Secure handling of sensitive commands
-│   ├── /middleware
-│   │   ├── authenticateToken.js     # JWT verification middleware
-│   │   ├── rateLimiter.js           # Rate limiting to prevent brute-force attacks
-│   │   └── inputValidator.js        # Input sanitization/validation (using libraries like Joi)
-│   ├── /models
-│   │   └── User.js                  # User schema/model for your chosen DB
-│   ├── /routes
-│   │   ├── authRoutes.js            # Routes for user registration and login
-│   │   └── commandRoutes.js         # Routes for processing commands
-│   ├── .env                         # Environment variables (do not commit to version control)
-│   ├── package.json                 # Node.js dependencies and scripts
-│   └── server.js                    # Main Express server file; loads middleware and routes
+│   │   ├── authCTRL.js               # Registration and login logic
+│   │   ├── blgCTRL.js                # Defines the API endpoints fore blog ops
+│   │   ├── pBlgCTRL.js               # Private blog endpoint from client recACC.js
+│   │   └── commandCTRL.js            # Secure handling of **sensitive** commands
+|   |
+│   ├── /interGuard         # Intermediary layer between OS and apps, which enables communication and data management after cleansing.
+│   │   ├── authTOK.js                # JWT verification middleware
+│   │   ├── inpVAL.js                 # Input sanitization/validation (using libraries like Joi or something)
+│   │   └── rateLIM.js                # Rate limiting to prevent brute-force attacks
+|   |
+│   ├── /dummys            # User account schemas
+│   │   ├── deepR.js                  # Admin account schema for chosen DB
+│   │   ├── frIEN.js                  # 'Friend' account, access code asked for per use case. (priv / public blog, perhaps?) [access code changes automatically every 3 months]
+│   │   └── user.js                   # Basic User schema/model for chosen DB
+|   |
+│   ├── /circuits           # "Routes" - denoted as circ / circuit per use case
+│   │   ├── authCirc.js               # Routes for user registration and login
+│   │   ├── blgCirc.js                # Defines the API endpoints fore blog ops
+│   │   └── commandCirc.js            # Routes for processing normal user commands
+|   |
+│   ├── .env                     # Environment variables (!!!do not commit to version control!!!) sensitive configs
+│   ├── package.json             # Node.js dependencies and scripts
+│   └── server.js                # Main Express server file; loads middleware and routes
 │
-└── README.md                        # Project documentation and setup instructions
+└── README.md                # Project documentation and setup instructions
 ```
 
 
