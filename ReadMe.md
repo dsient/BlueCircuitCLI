@@ -55,7 +55,7 @@ Users access the project through a web browser. On load, they see an OS startup 
 
 # File Structure
 
-Somewhat unusual but efficient file structure to keep the project modular and maintainable, with high levels of security:
+file structure; modular and maintainable, with high levels of security:
 
 ```
 /bluecircuit-os
